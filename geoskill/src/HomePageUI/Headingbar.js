@@ -2,7 +2,7 @@ import React from "react";
 
 function Headingbar (){
     return (
-        <div>
+        <div id="overheadbar"> 
         <svg id="bar" width="1843" height="72" viewBox="0 0 1843 72" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d)">
               <path d="M1718.13 55.5821H76.0507L7.22718 0.41791H1835.11L1718.13 55.5821Z" fill="#B6BBC6"/>

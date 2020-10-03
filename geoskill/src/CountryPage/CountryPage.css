@@ -1,0 +1,245 @@
+#topInner {
+    /* Rectangle 14 */
+
+position: absolute;
+left: 68.59%;
+right: 5.57%;
+top: 23.01%;
+bottom: 49.37%;
+
+background: #C4C4C4;
+border-radius: 37px;
+
+}
+#topOutter {
+    /* Rectangle 8 */
+z-index: -1;
+position: absolute;
+left: 67.92%;
+right: 4.9%;
+top: 22.2%;
+bottom: 48.56%;
+
+background: #B6BBC6;
+}
+#topTitleBar{
+    z-index: -1;
+    position: absolute;
+    width: 679px;
+    height: 72px;
+    left: 63.59%;
+    right: 5.57%;
+    top:14%;
+    bottom: 50%;
+    font-family: Roboto;
+}
+
+#backgroundImage {
+    /* Image 1 */
+    
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    filter: blur(5px);
+    background: url(../HomePageUI/ComponentTMP_0-image.png);
+}
+/* Here’s some fun facts about France */
+#funFactText
+{
+    margin-top: 5px;
+position: absolute;
+ width: 679px;
+    height: 72px;
+left: 63.59%;
+    right: 5.57%;
+    top:14%;
+    bottom: 50%;
+font-family: Roboto;
+font-style: normal;
+font-weight: 1000;
+font-size: 36px;
+line-height: 42px;
+text-align: center;
+
+color: #505050;
+
+transform: rotate(0.08deg);
+}
+#bottomInner{
+    /* Rectangle 13 */
+
+position: absolute;
+left: 68.33%;
+right: 5.83%;
+top: 62.09%;
+bottom: 10.29%;
+
+background: #C4C4C4;
+border-radius: 37px;
+
+}
+
+#bottomOutter {
+    z-index: -1;
+
+position: absolute;
+left: 67.6%;
+right: 4.9%;
+top: 60.83%;
+bottom: 8.66%;
+
+background: #B6BBC6;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#bottomTitleBar {
+    z-index: -1;
+    position: absolute;
+    width: 679px;
+    height: 72px;
+    left: 63.59%;
+    right: 5.57%;
+    top: 52.83%;
+    bottom: 8.66%;
+    font-family: Roboto;
+}
+#currentEventText {
+    /* Here’s whats current going on in France */
+    position: absolute;
+    margin-top: 5px;
+    width: 679px;
+    height: 72px;
+    left: 63.59%;
+    right: 5.57%;
+    top: 52.83%;
+    bottom: 8.66%;
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+font-size: 30px;
+line-height: 35px;
+text-align: center;
+
+color: #505050;
+
+transform: rotate(0.08deg);
+
+}
+
+#streetViewDiv{
+/* Rectangle 7 */
+
+position: absolute;
+left: 1.98%;
+right: 36.77%;
+top: 26.44%;
+bottom: 14.44%;
+
+background: #B6BBC6;
+border: 5px solid #EEEEEE;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+#triviaBox {
+    /* Rectangle 10 */
+z-index: -1;
+position: absolute;
+left: 1.35%;
+right: 36.04%;
+top: 88.54%;
+bottom: 2.8%;
+
+background: #B6BBC6;
+
+}
+
+#triviaBoxTxt{
+ /* Let’s go play some world countries triva */
+
+position: absolute;
+left: 2.45%;
+right: 50.83%;
+top: 91.34%;
+bottom: 5.05%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+font-size: 34px;
+line-height: 40px;
+/* identical to box height */
+text-align: center;
+
+color: #505050;
+
+ 
+}
+#WelcomeDiv{
+    z-index: -1;
+    position: absolute;
+    width: 679px;
+    height: 72px;
+    left: 14.98%;
+    right: 38.58%;
+    top: 17.08%;
+    bottom: 50%;
+}
+#WelcomeDivTxt{
+    /* Welcome To France */
+margin-top: 5px;
+position: absolute;
+width: 679px;
+height: 72px;
+left: 14.98%;
+right: 38.58%;
+top: 17.08%;
+bottom: 50%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 42px;
+text-align: center;
+
+color: #505050;
+
+
+transform: rotate(0.08deg);
+
+}
+#startButton {
+    /* Rectangle 11 */
+
+position: absolute;
+left: 49.01%;
+right: 40.52%;
+top: 89.98%;
+bottom: 3.7%;
+
+background: #898C93;
+border-radius: 30px;
+
+}
+#startButtonTxt{
+    /* START */
+
+position: absolute;
+left: 49.17%;
+right: 40.52%;
+top: 91.52%;
+bottom: 3.97%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 42px;
+text-align: center;
+
+color: #D6D6D6;
+
+
+}

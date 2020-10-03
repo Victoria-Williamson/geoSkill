@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import CountryPage from './CountryPage/CountryPage';
 import MapPage from "./MapPage/MapPage";
+import TriviaPage from "./TriviaPage/TriviaPage";
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter , Route, Switch,Link} from "react-router-dom"; // Allows different webpages to be made
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
              <Route path="/" component={App} exact/>
              <Route path="/country" component={CountryPage}/>
              <Route path="/map" component={MapPage}/>
+             <Route path="/trivia" component ={TriviaPage}/>
             <Route component={Error}/>
            </Switch>
         </div> 
