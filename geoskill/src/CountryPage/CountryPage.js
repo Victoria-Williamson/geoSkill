@@ -9,9 +9,18 @@ import Search from "../HomePageUI/Search"; // imports SVG for the Search button
 import SearchBar from "../HomePageUI/SearchBar"; // imports SVG for search bar
 import titleBar from "../HomePageUI/Group.png";
 import "../HomePageUI/HomePage.css"; // Import CSS for all of the homepage UI
+import {
+    GoogleMapProvider,
+    HeatMap,
+    InfoWindow,
+    MapBox,
+    Marker,
+    Polygon,
+  } from '@googlemap-react/core'
 function CountryPage (){
     return (
         <div>
+            
             <div id="backgroundImage"/>
             {/* Fun Fact Section */}
             <div id="topInner"/>
@@ -25,7 +34,19 @@ function CountryPage (){
             <div id="bottomOutter"/>
             <BottomTitleBar id="bottomTitleBar"/>
             <div id="currentEventText"> Here's what's currently going on in France</div>
-            <div id ="streetViewDiv"/>
+            <div id ="streetViewDiv">
+            <div id="map">
+            <GoogleMapProvider>
+                <MapBox 
+                    streetViewControl = "true"
+                    apiKey="AIzaSyAzsTZRjuiUKdoNqIN0ZglQeKe1GkDzE40"
+                    otps={{
+                        center: {lat: 39, lng: 116},
+                        zoom: 14,
+                      }}/>
+            </GoogleMapProvider>
+            </div>
+                </div>
             <div id="triviaBox"/>
             <div id="triviaBoxTxt"> Let's go play some world countries trivia</div>
             <div id="startButton"/>

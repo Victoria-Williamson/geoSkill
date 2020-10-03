@@ -10,7 +10,7 @@ function TitleBar (){
 </g>
 <defs>
 <filter id="filter0_d" x="-3.78955" y="0" width="686.579" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="10"/>
 <feGaussianBlur stdDeviation="3"/>
