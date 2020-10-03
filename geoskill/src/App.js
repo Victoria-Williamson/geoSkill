@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Headingbar from './HomePageUI/Headingbar';// imports SVG for the Home bar
+import Home from "./HomePageUI/Home"; // imports SVG for the Home button
+import Search from "./HomePageUI/Search"; // imports SVG for the Search button
+import SearchBar from "./HomePageUI/SearchBar"; // imports SVG for search bar
+import "./HomePageUI/HomePage.css"; // Import CSS for all of the homepage UI
+import {BrowserRouter , Route, Switch,Link} from "react-router-dom"; // Allows different webpages to be made
+import CountryPage from './CountryPage/CountryPage';
+import MapPage from "./MapPage/MapPage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div id="backgroundImage">
+    <Headingbar id="bar"/>
+    <Home id="Home"/>
+    <Search id="Search"/>
+    <SearchBar id ="SearchBar"/>
+    <div id ="info"/>
+      </div>
   );
 }
 

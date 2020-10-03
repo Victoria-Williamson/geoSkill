@@ -2,11 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import CountryPage from './CountryPage/CountryPage';
+import MapPage from "./MapPage/MapPage";
 import * as serviceWorker from './serviceWorker';
-
+import {BrowserRouter , Route, Switch,Link} from "react-router-dom"; // Allows different webpages to be made
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        <div>
+            <Switch>
+             <Route path="/" component={App} exact/>
+             <Route path="/country" component={CountryPage}/>
+             <Route path="/map" component={MapPage}/>
+            <Route component={Error}/>
+           </Switch>
+        </div> 
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,146 @@
+#frame {
+/* Frame 1 */
+
+position: relative;
+width: 1920px;
+height: 1080px;
+
+background: #FFFFFF;
+}
+
+
+
+#backgroundImage {
+/* Image 1 */
+
+position: absolute;
+height: 100%;
+width: 100%;
+z-index: -1;
+
+background: url(./ComponentTMP_0-image.png);
+}
+
+#bar{
+    right: -50%;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 0px;
+}
+#Search {
+    position: absolute;
+    right: 65%;
+    top:20px;
+}
+#info {
+    /* Frame */
+
+position: relative;
+width: 1935px;
+height: 274px;
+
+
+
+/* Rectangle 1 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 30%;
+background: #B8BDC9;
+opacity: 0.58;
+
+}
+#Home {
+    position: absolute;
+    left: 150px;
+    top:20px;
+}
+#SearchBar
+{
+    position: absolute;
+    top:20px;
+    right:130px;
+}
+
+/* Group */
+#titleBar {
+position: absolute;
+top: 30px;
+left: 50%;
+transform: translateX(50%);
+filter: drop-shadow(0px 10px 6px rgba(60, 91, 141, 0.545));
+}
+
+#barShape2
+{
+position: absolute;
+left: 10.65%;
+right: 5.2%;
+top: 7.97%;
+bottom: 87.56%;
+
+background: #B6BBC6;
+}
+
+
+/* Vector */
+#barShape3
+{
+position: absolute;
+left: 10.59%;
+right: 5.11%;
+top: 7.94%;
+bottom: 87.53%;
+
+background: #707070;
+}
+
+/* Home */
+#home
+{
+position: absolute;
+left: 17.5%;
+right: 71.64%;
+top: 8.5%;
+bottom: 86.96%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+
+color: #000000;
+}
+
+/* Search */
+#search{
+position: absolute;
+left: 35.17%;
+right: 59.71%;
+top: 8.5%;
+bottom: 88.1%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+
+color: #000000;
+}
+
+#titleRectangle
+{
+/* Rectangle 1 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #B8BDC9;
+opacity: 0.58;
+}
