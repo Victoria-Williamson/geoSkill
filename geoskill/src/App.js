@@ -9,7 +9,7 @@ import {BrowserRouter , Route, Switch,Link} from "react-router-dom"; // Allows d
 
 function App() {
   return (
-    <div >
+    <div className = "container">
       <div id="backgroundImage"/>
       <img src={titleBar} id="overheadbar"/>
     <Home id="Home"/>
