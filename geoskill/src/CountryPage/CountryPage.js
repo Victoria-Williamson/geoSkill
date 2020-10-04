@@ -19,9 +19,12 @@ import {
     Polygon,
   } from '@googlemap-react/core'
  import Map from "./Map.js"; 
-function CountryPage (){
+function CountryPage (props){
     // React hook components to store all of the necessary variables, store france as default atm
-    const [country, setCountry] = useState("france");
+    var startCountry = "france";
+    if(props.country !== null && props.country !== undefined)
+        startCountry = props.country;
+    const [country, setCountry] = useState(startCountry);
     const [twoLetter, setTwoLetter] = useState("FR");
     const [results, setResults] = useState(null);
     const [latitudeAndLongitude, setLatitudeAndLongitude] = useState({
@@ -30,6 +33,7 @@ function CountryPage (){
     });
     const [culture, setCulture] = useState("");
     const [value,setValue] = useState(0);
+    var twoletter = null;
     var i = 0;
     // Using an API that can return the latitude and longitude of a country, this is then sent to the map to center it there
     async function fetchLatitudeAndLongitude(){
@@ -140,6 +144,7 @@ function CountryPage (){
                 fetchUrl(country);
                 fetchLatitudeAndLongitude();
                 fetchCultureInfo(country);
+                fetchCountryInfo(country);
                 inputAllInformation();
                
     }
@@ -175,7 +180,7 @@ function CountryPage (){
             <div id="factBox" >
             </div>
             <Map latitude ={latitudeAndLongitude.latitude} longitude = {latitudeAndLongitude.longitude}/>
-            <div id="countryButton"> country Button </div>
+            <div id="countryButton"> Search </div>
             <input type="text" id="country"/>
             <BottomTitleBar id="bottomTitleBar"/>
             <div id="currentEventText"> Here's some information on the culture of France</div>
