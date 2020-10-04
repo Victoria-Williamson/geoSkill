@@ -22,6 +22,21 @@
     background-color: red;
     z-index: 5;
 }
+#cultureText{
+    background-color: transparent;
+    position: absolute;
+    position: absolute;
+    margin-top: 5px;
+    left: 70.33%;
+    right: 5.83%;
+    top: 62.09%;
+    bottom: 10.29%;
+    height: 250px;
+    overflow-y: scroll;
+    width: 450px;
+    font-family: Roboto;
+    font-weight: 900;
+}
 #country {
     margin-top: 5px;
     height: 20px;
@@ -36,7 +51,7 @@
     font-family: Roboto;
 font-style: normal;
 font-weight: 900;
-font-size: 30px;
+font-size: 20px;
 line-height: 35px;
 
 color: #505050;
@@ -62,7 +77,7 @@ color: #505050;
     margin-bottom: 10px;
     position: absolute;
     text-align: justify;
-    height: 150px;
+    height: 110px;
     width: 450px;
     left: 69.59%;
     right: 6.57%;
@@ -71,11 +86,12 @@ color: #505050;
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: Roboto;
+    overflow-y: scroll;
 font-style: normal;
-font-weight: 1000;
-font-size: 20px;
+font-weight: 900;
 line-height: 42px;
-line-height: 99%;
+line-height: 110%;
+
 color: #505050;
 }
 #topInner {
@@ -194,10 +210,11 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     right: 5.57%;
     top: 52.83%;
     bottom: 8.66%;
+    overflow: auto;
 font-family: Roboto;
 font-style: normal;
 font-weight: 900;
-font-size: 30px;
+font-size: 25px;
 line-height: 35px;
 text-align: center;
 

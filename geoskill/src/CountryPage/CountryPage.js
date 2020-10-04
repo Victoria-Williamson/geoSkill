@@ -24,16 +24,23 @@ function CountryPage (){
     const [country, setCountry] = useState("france");
     const [twoLetter, setTwoLetter] = useState("FR");
     const [results, setResults] = useState(null);
-    const [latitude, setLatitude] = useState(null);
-    const [longitude, setLongitude] = useState(null);
+    const [latitudeAndLongitude, setLatitudeAndLongitude] = useState({
+        latitude: 0,
+        longitude: 0,
+    });
+    const [culture, setCulture] = useState("");
     const [value,setValue] = useState(0);
     var i = 0;
     // Using an API that can return the latitude and longitude of a country, this is then sent to the map to center it there
     async function fetchLatitudeAndLongitude(){
         const response = await fetch(" http://api.worldbank.org/v2/country/" + twoLetter + "?format=json")
         const json = await response.json();
-        setLatitude(parseFloat(json[1][0].latitude));
-        setLongitude(parseFloat(json[1][0].longitude));
+        var coordinates = {
+            latitude:parseFloat(json[1][0].latitude),
+            longitude: parseFloat(json[1][0].longitude)
+        };
+        console.log(coordinates);
+       setLatitudeAndLongitude(coordinates);
     }
 
     // Using an API that retrives information on the given country
@@ -44,6 +51,34 @@ function CountryPage (){
         if(json !== null || json !== undefined)
         setResults(json[0]);
         setTwoLetter(json[0].alpha2Code);
+    }
+
+    async function fetchCultureInfo(countryName){
+        var url = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + countryName +"%20Culture&format=json";
+        const response = await fetch(url);
+        const json = await response.json();
+        var cultureText = document.getElementById("cultureText");
+        cultureText.innerHTML="";
+        for(var i = 0; i <json.query.search.length; i++)
+            {
+                var item = document.createElement("li");
+                item.innerHTML = json.query.search[i].snippet;
+                cultureText.appendChild(item);
+            }
+    }
+
+    async function fetchCountryInfo(countryName){
+        var url = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + countryName +"%20History&format=json";
+        const response = await fetch(url);
+        const json = await response.json();
+        var funFactText = document.getElementById("funFactInfo");
+        funFactText.innerHTML="";
+        for(var i = 0; i <json.query.search.length; i++)
+            {
+                var item = document.createElement("li");
+                item.innerHTML = json.query.search[i].snippet;
+                funFactText.appendChild(item);
+            }
     }
 
     // Calls the fetch function to retrive information on the given function
@@ -57,11 +92,17 @@ function CountryPage (){
         fetchLatitudeAndLongitude();
     }, []);
 
+    useEffect (() => {
+        fetchCultureInfo(country);
+    }, []);
+
+    useEffect (() => {
+        fetchCountryInfo(country);
+    }, []);
     inputAllInformation();
     // input all information function tht is having problems
     function inputAllInformation(){
-        if(country === null || results === null || latitude === null || longitude === null)
-        {
+        if(country === null || results === null || latitudeAndLongitude.latitude=== 0){
             setTimeout(inputAllInformation,50);
             return;
         }
@@ -77,8 +118,31 @@ function CountryPage (){
        var string = "The main language(s) in " + country + " are : " +languages +"." + country + " is located on the " +results.region + ", in the  " + results.subregion + " portion of the continent." + " The country is current home to apprx. " + results.population + " people !";
        info.innerHTML = string;
        box.style.backgroundImage="url(" +results.flag + ")"; 
+       
     }
 
+    function updateMap()
+    {
+        var country = document.getElementById("country");
+                country = country.value;
+                country = country.toLowerCase();
+                country = country.charAt(0).toUpperCase() + country.slice(1);
+                setCountry(country);
+                console.log(country, "country");
+                var currentEventText = document.getElementById("currentEventText");
+                currentEventText.innerHTML =  "Here's some information on the culture of " + country;
+                var welcome = document.getElementById("WelcomeDivTxt");
+                welcome.innerHTML = "Welcome to " + country;
+                setLatitudeAndLongitude({
+                    latitude:0,
+                    longitude:0,
+                });
+                fetchUrl(country);
+                fetchLatitudeAndLongitude();
+                fetchCultureInfo(country);
+                inputAllInformation();
+               
+    }
     window.onclick = function(e)
     {
         if(e.target.id !== "countryButton")
@@ -87,24 +151,8 @@ function CountryPage (){
             }
         if(e.target.id === "countryButton");
             {
-                var country = document.getElementById("country");
-                country = country.value;
-                country = country.toLowerCase();
-                country = country.charAt(0).toUpperCase() + country.slice(1);
-                setCountry(country);
-                console.log(country, "country");
-                var funFact = document.getElementById("funFactText");
-                var currentEventText = document.getElementById("currentEventText");
-                currentEventText.innerHTML =  "Here's what's currently going on in " + country;
-                funFact.innerHTML = "Here's some fun facts about " + country;
-                var welcome = document.getElementById("WelcomeDivTxt");
-                welcome.innerHTML = "Welcome to " + country;
-                fetchUrl(country);
-                fetchLatitudeAndLongitude();
-                i++;
-               setValue(i);
-               console.log(parseFloat(latitude));
-               
+                updateMap();
+                updateMap();
             }
     }
 
@@ -126,11 +174,11 @@ function CountryPage (){
             <div id="bottomOutter"/>
             <div id="factBox" >
             </div>
-            <Map latitude ={latitude} longitude = {longitude}/>
+            <Map latitude ={latitudeAndLongitude.latitude} longitude = {latitudeAndLongitude.longitude}/>
             <div id="countryButton"> country Button </div>
             <input type="text" id="country"/>
             <BottomTitleBar id="bottomTitleBar"/>
-            <div id="currentEventText"> Here's what's currently going on in France</div>
+            <div id="currentEventText"> Here's some information on the culture of France</div>
             <div id="triviaBox"/>
             <div id="triviaBoxTxt"> Let's go play some world countries trivia</div>
             <div id="startButton"/>
@@ -138,6 +186,7 @@ function CountryPage (){
             <WelcomeDiv/>
             <div id="WelcomeDivTxt"> Welcome to France </div>
             <img src={titleBar} id="overheadbar"/>
+            <div id="cultureText"/>
             <Home id="Home"/>
             <Search id="Search"/>
             <SearchBar id ="SearchBar"/>
